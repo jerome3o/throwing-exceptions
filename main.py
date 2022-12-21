@@ -1,17 +1,17 @@
 people = {
+  "Sue and Peter": "GG",
   "John and Judith": "JJ",
-  "Niamh Swannack": "NS",
-  "Marco Tyler-Rodrigue": "MTR",
-  "Kieran Hitchcock": "KH",
-  "Rowena Devathasan": "RO",
-
-  "Olivia Kyle": "OK",
-  "Harriet and Rowan": "HR",
+  "Harriet and Rowan": "MD",
   "Emily and Henry": "EH",
   "Matt and Aleks": "MA",
   "Rosie and Jackson": "RJ",
 
+  "Niamh Swannack": "NS",
   "Emily Doyle": "ED",
+
+  "Marco Tyler-Rodrigue": "M",
+  "Kieran Hitchcock": "KH",
+  "Rowena Devathasan": "RO",
 }
 
 def get_bin_string(s: str):

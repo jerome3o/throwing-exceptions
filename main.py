@@ -1,4 +1,4 @@
-people = {
+batch_1 = {
   "Sue and Peter": "GG",
   "John and Judith": "JJ",
   "Harriet and Rowan": "MD",
@@ -12,6 +12,46 @@ people = {
   "Marco Tyler-Rodrigue": "M",
   "Kieran Hitchcock": "KH",
   "Rowena Devathasan": "RO",
+}
+
+people = {
+    # other
+    "Olivia Kyle": "OK",
+
+    # OG analysis
+    "Evan Simmers": "ES",
+    "Will Snell": "WS",
+    "Phil Dahm": "PD",
+    "Alan Mcnaughton": "AM",
+
+    # Op Data
+    "Lara Collier": "LC",
+    "Greissen Leslie": "GL",
+    "Antonio Ojeda Macias": "AM",
+    "Jules van der Toorn": "JT",
+
+    # Covid 9Team
+    "Karen Panoedjoe": "KP",
+    "Chris Lu": "CL",
+    "Harrison Handley": "HH",
+    "Ari Ryan": "AR",
+    "Katherine Chen": "KC",
+    "Diego Pinto": "DP",
+
+    # Software
+    "Flynn Doherty": "FD",
+    "Max Isbey": "MI",
+    "Maxime Thomasin": "MT",
+    "Sam Bristow": "SB",
+    "Anu Dissanayake": "AD",
+    "Elizabeth Cammell": "EC",
+
+    # "Simon Kessels": "SK",
+    # "Matt Hawkins": "MH",
+    # "Fillipo Tunesi": "FT",
+    # "Likhitha Satrasala": "LS",
+    # "Chris Ching": "CC",
+    # "Andrew Haigh": "AH",
 }
 
 def get_bin_string(s: str):

@@ -14,7 +14,7 @@ batch_1 = {
   "Rowena Devathasan": "RO",
 }
 
-people = {
+batch_2 = {
     # other
     "Olivia Kyle": "OK",
 
@@ -54,6 +54,21 @@ people = {
     # "Andrew Haigh": "AH",
 }
 
+people = {
+    "Kyle Sefonte": "KS",
+    "Eleanor Olsen": "EB",
+
+    "Andrea Daly": "AD",
+    "Aurora Ballantyne": "AB",
+    "Chris Ballantyne": "CB",
+
+    "Ben White": "BW",
+    "Hannah Wilson": "HW",
+    "Alex Le Comte": "AL",
+    "Rachel Tassoni": "RT",
+}
+
+
 def get_bin_string(s: str):
     binary_string = ""
 
@@ -70,7 +85,11 @@ def get_bin_string(s: str):
 
 def main():
     for name, initial in people.items():
-        print(f"{name:21}", get_bin_string(initial))
+        n = get_bin_string(initial)
+        # add spaces every 4 characters
+        n = " ".join(n[i:i + 4] for i in range(0, len(n), 4))
+
+        print(f"{name:21}", n)
 
 if __name__ == "__main__":
     import logging

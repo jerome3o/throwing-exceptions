@@ -69,30 +69,47 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Kiln Temperature Visualization</h1>
-      <div className="container">
-        <div className="input-panel">
-          <label>
-            Name:
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-          </label>
-          <br />
-          <h3>Firing Steps:</h3>
-          <FiringSteps steps={steps} setSteps={setSteps} />
-          <br />
-          <button onClick={visualizeFiring}>Visualize Firing</button>
-        </div>
-        <div className="plot-panel">
-          <Plot
-            data={plotData}
-            layout={{
-              title: name,
-              xaxis: { title: 'Time (hours)' },
-              yaxis: { title: 'Temperature (°C)' },
-              showlegend: true,
-            }}
-          />
+    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+      <div className="relative py-3 sm:max-w-xl mx-auto text-center">
+        <h1 className="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          Kiln Temperature Visualization
+        </h1>
+        <div className="container mt-6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="input-panel">
+            <label className="block">
+              <span className="text-gray-700">Name:</span>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+              />
+            </label>
+            <h3 className="text-xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-2xl mt-4">
+              Firing Steps:
+            </h3>
+            <FiringSteps steps={steps} setSteps={setSteps} />
+            <button
+              onClick={visualizeFiring}
+              className="mt-3 inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Visualize Firing
+            </button>
+          </div>
+          <div className="plot-panel">
+            <Plot
+              data={plotData}
+              layout={{
+                title: name,
+                xaxis: { title: 'Time (hours)' },
+                yaxis: { title: 'Temperature (°C)' },
+                showlegend: true,
+                autosize: true,
+              }}
+              useResizeHandler={true}
+              style={{ width: '100%', minHeight: '400px' }}
+            />
+          </div>
         </div>
       </div>
     </div>

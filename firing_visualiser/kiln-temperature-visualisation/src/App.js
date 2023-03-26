@@ -1,32 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
 import FiringSteps from './FiringSteps';
+import './App.css';
 
 const defaultSteps = [
   {
@@ -96,27 +71,29 @@ function App() {
   return (
     <div className="App">
       <h1>Kiln Temperature Visualization</h1>
-      <div>
-        <label>
-          Name:
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </label>
-        <br />
-        <h3>Firing Steps:</h3>
-        <FiringSteps steps={steps} setSteps={setSteps} />
-        <br />
-        <button onClick={visualizeFiring}>Visualize Firing</button>
-      </div>
-      <div>
-        <Plot
-          data={plotData}
-          layout={{
-            title: name,
-            xaxis: { title: 'Time (hours)' },
-            yaxis: { title: 'Temperature (°C)' },
-            showlegend: true,
-          }}
-        />
+      <div className="container">
+        <div className="input-panel">
+          <label>
+            Name:
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          </label>
+          <br />
+          <h3>Firing Steps:</h3>
+          <FiringSteps steps={steps} setSteps={setSteps} />
+          <br />
+          <button onClick={visualizeFiring}>Visualize Firing</button>
+        </div>
+        <div className="plot-panel">
+          <Plot
+            data={plotData}
+            layout={{
+              title: name,
+              xaxis: { title: 'Time (hours)' },
+              yaxis: { title: 'Temperature (°C)' },
+              showlegend: true,
+            }}
+          />
+        </div>
       </div>
     </div>
   );

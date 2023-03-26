@@ -37,7 +37,7 @@ function App() {
 
   const visualizeFiring = () => {
     try {
-      const firingSteps = JSON.parse(steps);
+      const firingSteps = steps;
       const timestamps = [0];
       const temperatures = [firingSteps[0].start_temperature];
 
@@ -69,12 +69,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative py-3 sm:max-w-xl mx-auto text-center">
+    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center ">
+      <div className="relative py-3 mx-auto text-center w-screen px-4">
         <h1 className="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           Kiln Temperature Visualization
         </h1>
-        <div className="container mt-6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="container mt-6 mx-auto grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-screen px-4">
+
           <div className="input-panel">
             <label className="block">
               <span className="text-gray-700">Name:</span>
@@ -107,7 +108,7 @@ function App() {
                 autosize: true,
               }}
               useResizeHandler={true}
-              style={{ width: '100%', minHeight: '400px' }}
+              style={{ width: '100%', minHeight: '600px' }}
             />
           </div>
         </div>

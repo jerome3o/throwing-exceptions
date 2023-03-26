@@ -26,6 +26,7 @@ import './App.css';
 
 import React, { useState } from 'react';
 import Plot from 'react-plotly.js';
+import FiringSteps from './FiringSteps';
 
 const defaultSteps = [
   {
@@ -56,7 +57,7 @@ const defaultSteps = [
 
 function App() {
   const [name, setName] = useState('P4');
-  const [steps, setSteps] = useState(JSON.stringify(defaultSteps, null, 2));
+  const [steps, setSteps] = useState(defaultSteps);
   const [plotData, setPlotData] = useState([]);
 
   const visualizeFiring = () => {
@@ -101,10 +102,8 @@ function App() {
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         </label>
         <br />
-        <label>
-          Firing Steps:
-          <textarea value={steps} onChange={(e) => setSteps(e.target.value)} />
-        </label>
+        <h3>Firing Steps:</h3>
+        <FiringSteps steps={steps} setSteps={setSteps} />
         <br />
         <button onClick={visualizeFiring}>Visualize Firing</button>
       </div>
